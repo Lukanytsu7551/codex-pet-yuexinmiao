@@ -1,0 +1,227 @@
+{
+  "cell": {
+    "width": 192,
+    "height": 208
+  },
+  "atlas": {
+    "width": 1536,
+    "height": 2288,
+    "columns": 8,
+    "rows": 11
+  },
+  "rows": [
+    {
+      "row": 0,
+      "state": "idle",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sources": [
+        "cat-idle.gif",
+        "cat-loafing.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 1,
+      "state": "running-right",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sources": [
+        "cat-roam.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 2,
+      "state": "running-left",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sources": [
+        "cat-roam.gif"
+      ],
+      "mirrored": true,
+      "approximate": false
+    },
+    {
+      "row": 3,
+      "state": "waving",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sources": [
+        "cat-greet.gif",
+        "cat-attention.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 4,
+      "state": "jumping",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "sources": [
+        "cat-happy.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 5,
+      "state": "failed",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sources": [
+        "cat-error.gif",
+        "cat-sad.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 6,
+      "state": "waiting",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sources": [
+        "cat-waiting.gif",
+        "cat-needsinput.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 7,
+      "state": "running",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sources": [
+        "cat-working.gif",
+        "cat-working-2.gif",
+        "cat-working-3.gif",
+        "cat-working-4.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 8,
+      "state": "review",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sources": [
+        "cat-thinking.gif",
+        "cat-thinking-2.gif",
+        "cat-talking.gif"
+      ],
+      "mirrored": false,
+      "approximate": false
+    },
+    {
+      "row": 9,
+      "state": "look-directions-a",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sources": [
+        "cat-thinking.gif",
+        "cat-needsinput.gif",
+        "cat-attention.gif",
+        "cat-roam.gif"
+      ],
+      "mirrored": false,
+      "approximate": true
+    },
+    {
+      "row": 10,
+      "state": "look-directions-b",
+      "used_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sources": [
+        "cat-idle.gif",
+        "cat-loafing.gif",
+        "cat-sleeping.gif",
+        "cat-sad.gif"
+      ],
+      "mirrored": false,
+      "approximate": true
+    }
+  ],
+  "notes": [
+    "Rows 9-10 are best-effort fillers because the source GIFs do not include true 16-direction look sprites.",
+    "All imagery is derived from assets/yuexinmiao GIF files."
+  ]
+}

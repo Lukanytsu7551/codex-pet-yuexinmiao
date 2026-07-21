@@ -7,6 +7,9 @@ Personal Codex pet materials based on the Yuexinmiao skin assets from `myunwang/
 - `assets/yuexinmiao/` - Yuexinmiao GIF assets copied from `LLMPET/assets/cat`
 - `docs/codex-pet-design-yuexinmiao.md` - Codex pet design notes
 - `docs/yuexinmiao-codex-asset-map.md` - mapping from LLMPET GIF assets to Codex pet states and v2 atlas rows
+- `scripts/build_pet_atlas.py` - builds the Codex v2 sprite atlas from the GIF assets
+- `scripts/install_local_pet.py` - installs the generated pet into `~/.codex/pets`
+- `dist/yuexinmiao-codex-pet/` - generated local pet package and QA images
 
 ## Source And Attribution
 
@@ -34,3 +37,35 @@ Codex v2 pets use an 8x11 sprite atlas. The LLMPET Yuexinmiao assets are individ
 
 The original Yuexinmiao assets do not include true 16-direction look sprites, so rows 9-10 of a Codex v2 atlas will be approximate unless new art is created.
 
+## Build
+
+Use Python with Pillow:
+
+```bash
+python3 scripts/build_pet_atlas.py
+```
+
+Generated files:
+
+```text
+dist/yuexinmiao-codex-pet/
+├── pet.json
+├── spritesheet.webp
+├── spritesheet.png
+├── build-manifest.json
+└── qa/
+    ├── contact-sheet.png
+    └── previews/
+```
+
+## Install Locally
+
+```bash
+python3 scripts/install_local_pet.py
+```
+
+This copies `pet.json` and `spritesheet.webp` to:
+
+```text
+~/.codex/pets/yuexinmiao-codex-pet/
+```
