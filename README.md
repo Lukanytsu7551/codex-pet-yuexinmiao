@@ -11,14 +11,6 @@ Personal Codex pet materials based on the Yuexinmiao skin assets from `myunwang/
 - `scripts/install_local_pet.py` - installs the generated pet into `~/.codex/pets`
 - `dist/yuexinmiao-codex-pet/` - generated local pet package and QA images
 
-## Source And Attribution
-
-The Yuexinmiao GIF assets are from:
-
-- Repository: https://github.com/myunwang/LLMPET
-- Source directory: https://github.com/myunwang/LLMPET/tree/main/assets/cat
-- Attribution file: `assets/yuexinmiao/CREDITS.md`
-
 The original `LLMPET` attribution notes that the cat meme GIFs come from Douyin creator `@月薪喵`.
 
 ## Usage Scope
