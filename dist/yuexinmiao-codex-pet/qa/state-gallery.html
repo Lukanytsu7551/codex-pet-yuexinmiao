@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>月薪喵状态映射</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 32px; color: #20242a; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    p { color: #59616c; line-height: 1.6; }
+    table { border-collapse: collapse; width: 100%; margin-top: 24px; }
+    th, td { border: 1px solid #d8dee6; padding: 14px; vertical-align: middle; text-align: left; }
+    th { background: #f6f8fa; }
+    img { width: 72px; height: 72px; object-fit: contain; margin-right: 8px; }
+    .images { min-width: 240px; }
+    span { color: #6b7280; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>月薪喵皮肤 × 状态</h1>
+  <p>这里是一一对应的 LLMPET 月薪喵 GIF 状态表。Codex 原生宠物只能播放固定 v2 atlas 行，所以部分 LLMPET 状态会折叠到最接近的 Codex 行。</p>
+  <table>
+    <thead>
+      <tr><th>表情</th><th>状态</th><th>什么时候出现</th><th>Codex 原生映射</th></tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-working.gif" alt="cat-working.gif" title="cat-working.gif">
+<img src="../../../assets/yuexinmiao/cat-working-2.gif" alt="cat-working-2.gif" title="cat-working-2.gif">
+<img src="../../../assets/yuexinmiao/cat-working-3.gif" alt="cat-working-3.gif" title="cat-working-3.gif">
+<img src="../../../assets/yuexinmiao/cat-working-4.gif" alt="cat-working-4.gif" title="cat-working-4.gif"></td>
+        <td><strong>working 干活</strong><br><span>working</span></td>
+        <td>正在调用工具 / 改文件</td>
+        <td>Codex row 7<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-thinking.gif" alt="cat-thinking.gif" title="cat-thinking.gif">
+<img src="../../../assets/yuexinmiao/cat-thinking-2.gif" alt="cat-thinking-2.gif" title="cat-thinking-2.gif"></td>
+        <td><strong>thinking 思考</strong><br><span>thinking</span></td>
+        <td>提交提问后 / 工具间隙的长推理</td>
+        <td>Codex row 8<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-talking.gif" alt="cat-talking.gif" title="cat-talking.gif"></td>
+        <td><strong>talking 回应中</strong><br><span>talking</span></td>
+        <td>模型正在输出回复文本</td>
+        <td>Codex row 8<br><span>Codex 原生 pet 没有 talking 行，归入 review/thinking 行。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-juggling.gif" alt="cat-juggling.gif" title="cat-juggling.gif"></td>
+        <td><strong>juggling 并行子任务</strong><br><span>juggling</span></td>
+        <td>召唤 subagent 多线开工</td>
+        <td>Codex row 7<br><span>Codex 原生 pet 没有 juggling 行，归入 running/working 行。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-sweeping.gif" alt="cat-sweeping.gif" title="cat-sweeping.gif"></td>
+        <td><strong>sweeping 清理</strong><br><span>sweeping</span></td>
+        <td>压缩 / 清理上下文</td>
+        <td>Codex row 7<br><span>Codex 原生 pet 没有 sweeping 行，归入 running/working 行。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-waiting.gif" alt="cat-waiting.gif" title="cat-waiting.gif"></td>
+        <td><strong>waiting 等你授权</strong><br><span>waiting</span></td>
+        <td>需要你点允许 / 拒绝</td>
+        <td>Codex row 6<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-needsinput.gif" alt="cat-needsinput.gif" title="cat-needsinput.gif"></td>
+        <td><strong>needsinput 等你回复</strong><br><span>needsinput</span></td>
+        <td>需要你选择 / 输入</td>
+        <td>Codex row 6<br><span>Codex 原生 pet 没有独立 needsinput 行，归入 waiting 行。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-attention.gif" alt="cat-attention.gif" title="cat-attention.gif"></td>
+        <td><strong>attention 看一眼</strong><br><span>attention</span></td>
+        <td>任务刚结束提醒你</td>
+        <td>Codex row 3, 4<br><span>Codex 原生 pet 没有 attention 行，归入 waving/jumping。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-happy.gif" alt="cat-happy.gif" title="cat-happy.gif"></td>
+        <td><strong>happy 完成庆祝</strong><br><span>happy</span></td>
+        <td>一轮任务干完</td>
+        <td>Codex row 4<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-greet.gif" alt="cat-greet.gif" title="cat-greet.gif"></td>
+        <td><strong>greet 打招呼</strong><br><span>greet</span></td>
+        <td>新会话开始</td>
+        <td>Codex row 3<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-error.gif" alt="cat-error.gif" title="cat-error.gif"></td>
+        <td><strong>error 出错</strong><br><span>error</span></td>
+        <td>执行失败 / API 报错</td>
+        <td>Codex row 5<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-loafing.gif" alt="cat-loafing.gif" title="cat-loafing.gif">
+<img src="../../../assets/yuexinmiao/cat-loafing-2.gif" alt="cat-loafing-2.gif" title="cat-loafing-2.gif">
+<img src="../../../assets/yuexinmiao/cat-loafing-3.gif" alt="cat-loafing-3.gif" title="cat-loafing-3.gif"></td>
+        <td><strong>loafing 摸鱼</strong><br><span>loafing</span></td>
+        <td>上一步干完、下一步还没来的间隙</td>
+        <td>Codex row 9, 10<br><span>Codex 原生 pet 没有 loafing 行，只能保留在完整状态表或近似填入 look 行。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-idle.gif" alt="cat-idle.gif" title="cat-idle.gif"></td>
+        <td><strong>idle 待命</strong><br><span>idle</span></td>
+        <td>没有任务</td>
+        <td>Codex row 0<br><span></span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-roam.gif" alt="cat-roam.gif" title="cat-roam.gif"></td>
+        <td><strong>roam 闲逛</strong><br><span>roam</span></td>
+        <td>长时间空闲</td>
+        <td>Codex row 1, 2<br><span>Codex 原生 pet 用 running-left/right 表示拖动移动，闲逛语义只能近似映射。</span></td>
+      </tr>
+      <tr>
+        <td class="images"><img src="../../../assets/yuexinmiao/cat-sleeping.gif" alt="cat-sleeping.gif" title="cat-sleeping.gif">
+<img src="../../../assets/yuexinmiao/cat-sleeping-2.gif" alt="cat-sleeping-2.gif" title="cat-sleeping-2.gif"></td>
+        <td><strong>sleeping 睡觉</strong><br><span>sleeping</span></td>
+        <td>会话结束 / 久无活动</td>
+        <td>Codex row 10<br><span>Codex 原生 pet 没有 sleeping 行，只能保留在完整状态表或近似填入 look 行。</span></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -7,6 +7,7 @@ Personal Codex pet materials based on the Yuexinmiao skin assets from `myunwang/
 - `assets/yuexinmiao/` - Yuexinmiao GIF assets copied from `LLMPET/assets/cat`
 - `docs/codex-pet-design-yuexinmiao.md` - Codex pet design notes
 - `docs/yuexinmiao-codex-asset-map.md` - mapping from LLMPET GIF assets to Codex pet states and v2 atlas rows
+- `docs/codex-native-state-limitations.md` - why Codex cannot directly switch all LLMPET GIF states
 - `scripts/build_pet_atlas.py` - builds the Codex v2 sprite atlas from the GIF assets
 - `scripts/install_local_pet.py` - installs the generated pet into `~/.codex/pets`
 - `dist/yuexinmiao-codex-pet/` - generated local pet package and QA images
@@ -45,10 +46,14 @@ dist/yuexinmiao-codex-pet/
 ├── spritesheet.webp
 ├── spritesheet.png
 ├── build-manifest.json
+├── llmpet-state-map.json
 └── qa/
     ├── contact-sheet.png
+    ├── state-gallery.html
     └── previews/
 ```
+
+`state-gallery.html` shows the full LLMPET Yuexinmiao state-to-GIF mapping from the source assets. Codex itself can only render the nearest supported v2 atlas rows.
 
 ## Install Locally
 

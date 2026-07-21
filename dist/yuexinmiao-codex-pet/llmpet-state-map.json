@@ -1,0 +1,189 @@
+{
+  "source": "myunwang/LLMPET assets/cat",
+  "native_codex_limitation": "Codex native pets use fixed v2 atlas rows, not arbitrary LLMPET state names. The full LLMPET Yuexinmiao states are preserved here for documentation and previews; only the closest supported rows can be rendered by Codex itself.",
+  "states": [
+    {
+      "state": "working",
+      "label": "working 干活",
+      "when": "正在调用工具 / 改文件",
+      "sources": [
+        "cat-working.gif",
+        "cat-working-2.gif",
+        "cat-working-3.gif",
+        "cat-working-4.gif"
+      ],
+      "codex_rows": [
+        7
+      ]
+    },
+    {
+      "state": "thinking",
+      "label": "thinking 思考",
+      "when": "提交提问后 / 工具间隙的长推理",
+      "sources": [
+        "cat-thinking.gif",
+        "cat-thinking-2.gif"
+      ],
+      "codex_rows": [
+        8
+      ]
+    },
+    {
+      "state": "talking",
+      "label": "talking 回应中",
+      "when": "模型正在输出回复文本",
+      "sources": [
+        "cat-talking.gif"
+      ],
+      "codex_rows": [
+        8
+      ],
+      "codex_note": "Codex 原生 pet 没有 talking 行，归入 review/thinking 行。"
+    },
+    {
+      "state": "juggling",
+      "label": "juggling 并行子任务",
+      "when": "召唤 subagent 多线开工",
+      "sources": [
+        "cat-juggling.gif"
+      ],
+      "codex_rows": [
+        7
+      ],
+      "codex_note": "Codex 原生 pet 没有 juggling 行，归入 running/working 行。"
+    },
+    {
+      "state": "sweeping",
+      "label": "sweeping 清理",
+      "when": "压缩 / 清理上下文",
+      "sources": [
+        "cat-sweeping.gif"
+      ],
+      "codex_rows": [
+        7
+      ],
+      "codex_note": "Codex 原生 pet 没有 sweeping 行，归入 running/working 行。"
+    },
+    {
+      "state": "waiting",
+      "label": "waiting 等你授权",
+      "when": "需要你点允许 / 拒绝",
+      "sources": [
+        "cat-waiting.gif"
+      ],
+      "codex_rows": [
+        6
+      ]
+    },
+    {
+      "state": "needsinput",
+      "label": "needsinput 等你回复",
+      "when": "需要你选择 / 输入",
+      "sources": [
+        "cat-needsinput.gif"
+      ],
+      "codex_rows": [
+        6
+      ],
+      "codex_note": "Codex 原生 pet 没有独立 needsinput 行，归入 waiting 行。"
+    },
+    {
+      "state": "attention",
+      "label": "attention 看一眼",
+      "when": "任务刚结束提醒你",
+      "sources": [
+        "cat-attention.gif"
+      ],
+      "codex_rows": [
+        3,
+        4
+      ],
+      "codex_note": "Codex 原生 pet 没有 attention 行，归入 waving/jumping。"
+    },
+    {
+      "state": "happy",
+      "label": "happy 完成庆祝",
+      "when": "一轮任务干完",
+      "sources": [
+        "cat-happy.gif"
+      ],
+      "codex_rows": [
+        4
+      ]
+    },
+    {
+      "state": "greet",
+      "label": "greet 打招呼",
+      "when": "新会话开始",
+      "sources": [
+        "cat-greet.gif"
+      ],
+      "codex_rows": [
+        3
+      ]
+    },
+    {
+      "state": "error",
+      "label": "error 出错",
+      "when": "执行失败 / API 报错",
+      "sources": [
+        "cat-error.gif"
+      ],
+      "codex_rows": [
+        5
+      ]
+    },
+    {
+      "state": "loafing",
+      "label": "loafing 摸鱼",
+      "when": "上一步干完、下一步还没来的间隙",
+      "sources": [
+        "cat-loafing.gif",
+        "cat-loafing-2.gif",
+        "cat-loafing-3.gif"
+      ],
+      "codex_rows": [
+        9,
+        10
+      ],
+      "codex_note": "Codex 原生 pet 没有 loafing 行，只能保留在完整状态表或近似填入 look 行。"
+    },
+    {
+      "state": "idle",
+      "label": "idle 待命",
+      "when": "没有任务",
+      "sources": [
+        "cat-idle.gif"
+      ],
+      "codex_rows": [
+        0
+      ]
+    },
+    {
+      "state": "roam",
+      "label": "roam 闲逛",
+      "when": "长时间空闲",
+      "sources": [
+        "cat-roam.gif"
+      ],
+      "codex_rows": [
+        1,
+        2
+      ],
+      "codex_note": "Codex 原生 pet 用 running-left/right 表示拖动移动，闲逛语义只能近似映射。"
+    },
+    {
+      "state": "sleeping",
+      "label": "sleeping 睡觉",
+      "when": "会话结束 / 久无活动",
+      "sources": [
+        "cat-sleeping.gif",
+        "cat-sleeping-2.gif"
+      ],
+      "codex_rows": [
+        10
+      ],
+      "codex_note": "Codex 原生 pet 没有 sleeping 行，只能保留在完整状态表或近似填入 look 行。"
+    }
+  ]
+}

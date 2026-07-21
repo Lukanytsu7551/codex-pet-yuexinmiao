@@ -23,15 +23,15 @@
 
 | Atlas 行 | Codex 动作 | 首选素材 | 备用/轮换素材 | 处理方式 |
 |---|---|---|---|---|
-| 0 | idle | `cat-idle.gif` | `cat-loafing.gif`, `cat-loafing-2.gif`, `cat-loafing-3.gif` | 抽帧后循环成 8 帧 |
+| 0 | idle | `cat-idle.gif` | - | 抽帧后循环成 6 帧 |
 | 1 | running-right | `cat-roam.gif` | `cat-working.gif` | 从行走/奔跑感素材抽帧，必要时水平偏移 |
 | 2 | running-left | `cat-roam.gif` | `cat-working.gif` | 由 row 1 镜像生成，仍来自原素材 |
-| 3 | waving | `cat-greet.gif` | `cat-attention.gif` | 打招呼/提醒语义 |
+| 3 | waving | `cat-greet.gif` | - | 打招呼 |
 | 4 | jumping | `cat-happy.gif` | `cat-attention.gif` | 完成后的短暂开心 |
-| 5 | failed | `cat-error.gif` | `cat-sad.gif` | 出错或阻塞 |
-| 6 | waiting | `cat-waiting.gif` | `cat-needsinput.gif` | 等授权/等输入 |
+| 5 | failed | `cat-error.gif` | - | 出错或阻塞 |
+| 6 | waiting | `cat-waiting.gif` | - | 等授权；needsinput 只能折叠到该行 |
 | 7 | running | `cat-working.gif`, `cat-working-2.gif`, `cat-working-3.gif`, `cat-working-4.gif` | `cat-talking.gif`, `cat-juggling.gif`, `cat-sweeping.gif` | 按 Running 语义采样轮换 |
-| 8 | review | `cat-thinking.gif` | `cat-thinking-2.gif`, `cat-talking.gif` | 思考/审阅 |
+| 8 | review | `cat-thinking.gif`, `cat-thinking-2.gif` | `cat-talking.gif` | 思考/审阅；talking 只能折叠到该行 |
 | 9 | look directions 0-157.5 | `cat-idle.gif`, `cat-attention.gif`, `cat-needsinput.gif`, `cat-thinking.gif` | `cat-roam.gif` | 只能近似填充，不是真实方向素材 |
 | 10 | look directions 180-337.5 | `cat-idle.gif`, `cat-loafing.gif`, `cat-sleeping.gif`, `cat-sad.gif` | `cat-roam.gif` | 只能近似填充，不是真实方向素材 |
 
@@ -70,4 +70,3 @@
 3. 允许把同一个 GIF 的帧循环或采样到 8 帧。
 4. `running-left` 可以由 `running-right` 镜像得到，因为仍然来自原始 GIF。
 5. 第 9-10 行只能近似填充，因为原仓库没有 16 方向看向素材。
-

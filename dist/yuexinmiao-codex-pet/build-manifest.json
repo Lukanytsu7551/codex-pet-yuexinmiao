@@ -22,8 +22,7 @@
         5
       ],
       "sources": [
-        "cat-idle.gif",
-        "cat-loafing.gif"
+        "cat-idle.gif"
       ],
       "mirrored": false,
       "approximate": false
@@ -76,8 +75,7 @@
         3
       ],
       "sources": [
-        "cat-greet.gif",
-        "cat-attention.gif"
+        "cat-greet.gif"
       ],
       "mirrored": false,
       "approximate": false
@@ -112,8 +110,7 @@
         7
       ],
       "sources": [
-        "cat-error.gif",
-        "cat-sad.gif"
+        "cat-error.gif"
       ],
       "mirrored": false,
       "approximate": false
@@ -130,8 +127,7 @@
         5
       ],
       "sources": [
-        "cat-waiting.gif",
-        "cat-needsinput.gif"
+        "cat-waiting.gif"
       ],
       "mirrored": false,
       "approximate": false
@@ -169,8 +165,7 @@
       ],
       "sources": [
         "cat-thinking.gif",
-        "cat-thinking-2.gif",
-        "cat-talking.gif"
+        "cat-thinking-2.gif"
       ],
       "mirrored": false,
       "approximate": false

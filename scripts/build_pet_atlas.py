@@ -24,20 +24,20 @@ ATLAS_H = CELL_H * ROWS
 
 
 ROW_SPECS = [
-    {"row": 0, "state": "idle", "used": 6, "sources": ["cat-idle.gif", "cat-loafing.gif"]},
+    {"row": 0, "state": "idle", "used": 6, "sources": ["cat-idle.gif"]},
     {"row": 1, "state": "running-right", "used": 8, "sources": ["cat-roam.gif"]},
     {"row": 2, "state": "running-left", "used": 8, "sources": ["cat-roam.gif"], "mirror": True},
-    {"row": 3, "state": "waving", "used": 4, "sources": ["cat-greet.gif", "cat-attention.gif"]},
+    {"row": 3, "state": "waving", "used": 4, "sources": ["cat-greet.gif"]},
     {"row": 4, "state": "jumping", "used": 5, "sources": ["cat-happy.gif"]},
-    {"row": 5, "state": "failed", "used": 8, "sources": ["cat-error.gif", "cat-sad.gif"]},
-    {"row": 6, "state": "waiting", "used": 6, "sources": ["cat-waiting.gif", "cat-needsinput.gif"]},
+    {"row": 5, "state": "failed", "used": 8, "sources": ["cat-error.gif"]},
+    {"row": 6, "state": "waiting", "used": 6, "sources": ["cat-waiting.gif"]},
     {
         "row": 7,
         "state": "running",
         "used": 6,
         "sources": ["cat-working.gif", "cat-working-2.gif", "cat-working-3.gif", "cat-working-4.gif"],
     },
-    {"row": 8, "state": "review", "used": 6, "sources": ["cat-thinking.gif", "cat-thinking-2.gif", "cat-talking.gif"]},
+    {"row": 8, "state": "review", "used": 6, "sources": ["cat-thinking.gif", "cat-thinking-2.gif"]},
     {
         "row": 9,
         "state": "look-directions-a",
@@ -51,6 +51,123 @@ ROW_SPECS = [
         "used": 8,
         "sources": ["cat-idle.gif", "cat-loafing.gif", "cat-sleeping.gif", "cat-sad.gif"],
         "approximate": True,
+    },
+]
+
+
+LLMPET_STATE_SPECS = [
+    {
+        "state": "working",
+        "label": "working 干活",
+        "when": "正在调用工具 / 改文件",
+        "sources": ["cat-working.gif", "cat-working-2.gif", "cat-working-3.gif", "cat-working-4.gif"],
+        "codex_rows": [7],
+    },
+    {
+        "state": "thinking",
+        "label": "thinking 思考",
+        "when": "提交提问后 / 工具间隙的长推理",
+        "sources": ["cat-thinking.gif", "cat-thinking-2.gif"],
+        "codex_rows": [8],
+    },
+    {
+        "state": "talking",
+        "label": "talking 回应中",
+        "when": "模型正在输出回复文本",
+        "sources": ["cat-talking.gif"],
+        "codex_rows": [8],
+        "codex_note": "Codex 原生 pet 没有 talking 行，归入 review/thinking 行。",
+    },
+    {
+        "state": "juggling",
+        "label": "juggling 并行子任务",
+        "when": "召唤 subagent 多线开工",
+        "sources": ["cat-juggling.gif"],
+        "codex_rows": [7],
+        "codex_note": "Codex 原生 pet 没有 juggling 行，归入 running/working 行。",
+    },
+    {
+        "state": "sweeping",
+        "label": "sweeping 清理",
+        "when": "压缩 / 清理上下文",
+        "sources": ["cat-sweeping.gif"],
+        "codex_rows": [7],
+        "codex_note": "Codex 原生 pet 没有 sweeping 行，归入 running/working 行。",
+    },
+    {
+        "state": "waiting",
+        "label": "waiting 等你授权",
+        "when": "需要你点允许 / 拒绝",
+        "sources": ["cat-waiting.gif"],
+        "codex_rows": [6],
+    },
+    {
+        "state": "needsinput",
+        "label": "needsinput 等你回复",
+        "when": "需要你选择 / 输入",
+        "sources": ["cat-needsinput.gif"],
+        "codex_rows": [6],
+        "codex_note": "Codex 原生 pet 没有独立 needsinput 行，归入 waiting 行。",
+    },
+    {
+        "state": "attention",
+        "label": "attention 看一眼",
+        "when": "任务刚结束提醒你",
+        "sources": ["cat-attention.gif"],
+        "codex_rows": [3, 4],
+        "codex_note": "Codex 原生 pet 没有 attention 行，归入 waving/jumping。",
+    },
+    {
+        "state": "happy",
+        "label": "happy 完成庆祝",
+        "when": "一轮任务干完",
+        "sources": ["cat-happy.gif"],
+        "codex_rows": [4],
+    },
+    {
+        "state": "greet",
+        "label": "greet 打招呼",
+        "when": "新会话开始",
+        "sources": ["cat-greet.gif"],
+        "codex_rows": [3],
+    },
+    {
+        "state": "error",
+        "label": "error 出错",
+        "when": "执行失败 / API 报错",
+        "sources": ["cat-error.gif"],
+        "codex_rows": [5],
+    },
+    {
+        "state": "loafing",
+        "label": "loafing 摸鱼",
+        "when": "上一步干完、下一步还没来的间隙",
+        "sources": ["cat-loafing.gif", "cat-loafing-2.gif", "cat-loafing-3.gif"],
+        "codex_rows": [9, 10],
+        "codex_note": "Codex 原生 pet 没有 loafing 行，只能保留在完整状态表或近似填入 look 行。",
+    },
+    {
+        "state": "idle",
+        "label": "idle 待命",
+        "when": "没有任务",
+        "sources": ["cat-idle.gif"],
+        "codex_rows": [0],
+    },
+    {
+        "state": "roam",
+        "label": "roam 闲逛",
+        "when": "长时间空闲",
+        "sources": ["cat-roam.gif"],
+        "codex_rows": [1, 2],
+        "codex_note": "Codex 原生 pet 用 running-left/right 表示拖动移动，闲逛语义只能近似映射。",
+    },
+    {
+        "state": "sleeping",
+        "label": "sleeping 睡觉",
+        "when": "会话结束 / 久无活动",
+        "sources": ["cat-sleeping.gif", "cat-sleeping-2.gif"],
+        "codex_rows": [10],
+        "codex_note": "Codex 原生 pet 没有 sleeping 行，只能保留在完整状态表或近似填入 look 行。",
     },
 ]
 
@@ -142,6 +259,74 @@ def make_row_previews(atlas: Image.Image, output_dir: Path) -> None:
         )
 
 
+def write_state_map(output_dir: Path) -> None:
+    state_map = {
+        "source": "myunwang/LLMPET assets/cat",
+        "native_codex_limitation": (
+            "Codex native pets use fixed v2 atlas rows, not arbitrary LLMPET state names. "
+            "The full LLMPET Yuexinmiao states are preserved here for documentation and previews; "
+            "only the closest supported rows can be rendered by Codex itself."
+        ),
+        "states": LLMPET_STATE_SPECS,
+    }
+    (output_dir / "llmpet-state-map.json").write_text(
+        json.dumps(state_map, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def write_state_gallery(path: Path) -> None:
+    rows = []
+    for spec in LLMPET_STATE_SPECS:
+        imgs = "\n".join(
+            f'<img src="../../../assets/yuexinmiao/{source}" alt="{source}" title="{source}">' for source in spec["sources"]
+        )
+        codex_rows = ", ".join(str(row) for row in spec["codex_rows"])
+        note = spec.get("codex_note", "")
+        rows.append(
+            f"""
+      <tr>
+        <td class="images">{imgs}</td>
+        <td><strong>{spec["label"]}</strong><br><span>{spec["state"]}</span></td>
+        <td>{spec["when"]}</td>
+        <td>Codex row {codex_rows}<br><span>{note}</span></td>
+      </tr>"""
+        )
+    html = f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>月薪喵状态映射</title>
+  <style>
+    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 32px; color: #20242a; }}
+    h1 {{ font-size: 28px; margin-bottom: 8px; }}
+    p {{ color: #59616c; line-height: 1.6; }}
+    table {{ border-collapse: collapse; width: 100%; margin-top: 24px; }}
+    th, td {{ border: 1px solid #d8dee6; padding: 14px; vertical-align: middle; text-align: left; }}
+    th {{ background: #f6f8fa; }}
+    img {{ width: 72px; height: 72px; object-fit: contain; margin-right: 8px; }}
+    .images {{ min-width: 240px; }}
+    span {{ color: #6b7280; font-size: 13px; }}
+  </style>
+</head>
+<body>
+  <h1>月薪喵皮肤 × 状态</h1>
+  <p>这里是一一对应的 LLMPET 月薪喵 GIF 状态表。Codex 原生宠物只能播放固定 v2 atlas 行，所以部分 LLMPET 状态会折叠到最接近的 Codex 行。</p>
+  <table>
+    <thead>
+      <tr><th>表情</th><th>状态</th><th>什么时候出现</th><th>Codex 原生映射</th></tr>
+    </thead>
+    <tbody>
+      {"".join(rows)}
+    </tbody>
+  </table>
+</body>
+</html>
+"""
+    path.write_text(html, encoding="utf-8")
+
+
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     QA_DIR.mkdir(parents=True, exist_ok=True)
@@ -191,12 +376,16 @@ def main() -> None:
     (OUT_DIR / "build-manifest.json").write_text(
         json.dumps(build_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    write_state_map(OUT_DIR)
     make_contact_sheet(atlas, QA_DIR / "contact-sheet.png")
     make_row_previews(atlas, QA_DIR / "previews")
+    write_state_gallery(QA_DIR / "state-gallery.html")
 
     print(f"Wrote {spritesheet_webp}")
     print(f"Wrote {OUT_DIR / 'pet.json'}")
+    print(f"Wrote {OUT_DIR / 'llmpet-state-map.json'}")
     print(f"Wrote {QA_DIR / 'contact-sheet.png'}")
+    print(f"Wrote {QA_DIR / 'state-gallery.html'}")
     print(f"Wrote {QA_DIR / 'previews'}")
 
 
